@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14110f"><title>SnapBattle</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script></head>
+<body>
+<div id="loader" hidden><i></i></div><div id="toast" role="status"></div>
+<div id="viewer" hidden><img alt=""></div>
+<section id="auth">
+  <h1>SnapBattle</h1><p class="muted">Uma foto por dia. Só para a turma.</p>
+  <form id="authForm">
+    <input name="username" class="su" placeholder="Nome de exibição" maxlength="30">
+    <input name="email" type="email" placeholder="E-mail" required>
+    <input name="password" type="password" minlength="6" placeholder="Senha (mín. 6)" required>
+    <input name="invite" class="su" placeholder="Código de convite">
+    <button class="btn">Continuar</button>
+  </form>
+  <button class="link" id="toggle" type="button">Criar conta</button>
+</section>
+<div id="app" hidden>
+  <div class="hero"><small>Desafio de hoje</small><h2 id="theme"></h2><span id="cd">--:--:--</span><small>para encerrar a rodada</small></div>
+  <main>
+    <div class="panel" id="p-today"></div><div class="panel" id="p-rank" hidden></div>
+    <div class="panel" id="p-hist" hidden></div><div class="panel" id="p-me" hidden></div>
+  </main>
+  <nav><button data-t="today" class="on">Hoje</button><button data-t="rank">Ranking</button><button data-t="hist">Histórico</button><button data-t="me">Perfil</button></nav>
+</div>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
